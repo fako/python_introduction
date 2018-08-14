@@ -37,6 +37,12 @@ if __name__ == "__main__":
     happy_rabbits = [
         rabbit for rabbit in rabbits if rabbit.happiness > 30
     ]
+    happy_rabbits.sort(
+        key=lambda rabbit: rabbit.happiness,  # lambda's are simple anonymous functions
+        reverse=True
+    )
+    happy_rabbit_names = [str(rabbit) for rabbit in happy_rabbits]
+    happy_rabbits_hall_of_fame = ", ".join(happy_rabbit_names)
 
     # Keep track of the population with data!
     rabbit_records = [rabbit.to_record() for rabbit in rabbits]  # pprint this!
